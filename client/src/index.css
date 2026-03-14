@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 346 77% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 199 89% 48%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .ts-card {
+    @apply bg-white rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+
+  .ts-gradient-hero {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 50%, #1e293b 100%);
+  }
+
+  .ts-gradient-coral {
+    background: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%);
+  }
+
+  .ts-badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .ts-interest-tag {
+    @apply ts-badge bg-ocean-50 text-ocean-700 border border-ocean-100;
+  }
+
+  .ts-section {
+    @apply py-16 px-4 md:px-8;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .animate-in {
+    @apply animate-fade-in;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 99px;
+}
+
+/* Chat message animations */
+.message-bubble {
+  animation: fade-in 0.2s ease-out;
+}
